@@ -1,0 +1,28 @@
+
+# USB library:
+https://github.com/felHR85/UsbSerial/
+
+# Add the jitpack repo to your your project's build.gradle at the end of repositories
+allprojects {
+	repositories {
+		jcenter()
+		maven { url "https://jitpack.io" }
+	}
+}
+
+
+# Then add the dependency to your module's build.gradle:
+implementation 'com.github.felHR85:UsbSerial:6.1.0'
+
+
+# To fix 'Invoke-customs are only supported starting with Android O (--min-api 26)' issue: ( Add to app/build.gradle)
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+# Build .APK to run on device
+- Build -> Build/Bundle APKs -> Build APKs
+- .APK file goes to: PROJECT_NAME\app\build\outputs\apk\debug
